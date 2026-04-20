@@ -1,0 +1,69 @@
+const en = {
+  translation: {
+    customDrawer: {
+      logoutAlertCancelCta: "Cancel",
+      logoutAlertConfirmCta: "Sign out",
+      logoutAlertMessage: "Are you sure you want to sign out of your account?",
+      logoutAlertTitle: "Sign out?",
+      logoutCta: "Sign out",
+      logoutErrorMessage:
+        "Unable to end your session. Please try again shortly.",
+      logoutErrorTitle: "Error signing out",
+    },
+    login: {
+      alertTitle: "Login error",
+      cta: "Sign in",
+      emailInputPlaceholder: "Email *",
+      errorMessage:
+        "We couldn't complete the login right now. Please try again shortly.",
+      firstLinkText: "Don't have an account yet?",
+      invalidCredentialMessage: "The email or password provided is incorrect.",
+      invalidEmailMessage: "Invalid email.",
+      minPasswordMessage: "Password must be at least 6 characters.",
+      passwordInputPlaceholder: "Password *",
+      requiredEmailMessage: "Email is required.",
+      requiredPasswordMessage: "Password is required.",
+      secondLinkText: "Sign up",
+    },
+    myTasks: {
+      addTaskErrorMessage: "Unable to add the task. Please try again.",
+      alertTitle: "Error",
+      completeTaskErrorMessage:
+        "Unable to complete the task. Please try again.",
+      deleteTaskAlertCancelCta: "Cancel",
+      deleteTaskAlertConfirmCta: "Delete",
+      deleteTaskAlertMessage: "Are you sure you want to delete?",
+      deleteTaskAlertTitle: "Delete task",
+      deleteTaskErrorMessage: "Unable to delete the task. Please try again.",
+      emptyText: `You don't have any tasks yet.\nTap + to get started.`,
+      getTasksErrorMessage:
+        "Unable to load your tasks. Check your connection and try again.",
+      headerTitle: "My Tasks",
+      modalAddCta: "Add",
+      modalCancelCta: "Cancel",
+      modalInputPlaceholder: "Enter a task...",
+      modalUpdateCta: "Update",
+      searchableInputPlaceholder: "Search task...",
+      updateTaskErrorMessage: "Unable to update the task. Please try again.",
+    },
+    register: {
+      alertTitle: "Error creating account",
+      confirmationPasswordInputPlaceholder: "Confirm your password *",
+      cta: "Sign up",
+      divergentPasswordsMessage: "Passwords do not match.",
+      emailAlreadyInUseMessage: "An account with this email already exists.",
+      emailInputPlaceholder: "Email *",
+      errorMessage: "Please try again shortly.",
+      firstLinkText: "Already have an account?",
+      invalidEmailMessage: "Invalid email.",
+      minPasswordMessage: "Password must be at least 6 characters.",
+      passwordInputPlaceholder: "Password *",
+      requiredConfirmationPasswordMessage: "Please confirm your password.",
+      requiredEmailMessage: "Email is required.",
+      requiredPasswordMessage: "Password is required.",
+      secondLinkText: "Sign in",
+    },
+  },
+};
+
+export default en;

@@ -1,0 +1,57 @@
+import { CustomDrawer } from "@/components/CustomDrawer";
+import Colors from "@/constants/Colors";
+import Fonts from "@/constants/Fonts";
+import { FontAwesome6 } from "@expo/vector-icons";
+import { Drawer } from "expo-router/drawer";
+import { useTranslation } from "react-i18next";
+import { StyleSheet } from "react-native";
+
+export default function DashboardLayout() {
+  const { t } = useTranslation();
+
+  return (
+    <Drawer
+      drawerContent={(props) => <CustomDrawer {...props} />}
+      screenOptions={{
+        drawerActiveBackgroundColor: Colors.dark_light,
+        drawerActiveTintColor: Colors.light,
+        drawerItemStyle: styles.drawerItemStyle,
+        drawerLabelStyle: styles.drawerLabelStyle,
+        drawerStyle: styles.drawerStyle,
+        drawerType: "slide",
+        headerStyle: styles.headerStyle,
+        headerTintColor: Colors.light,
+        headerTitleStyle: styles.headerTitleStyle,
+      }}
+    >
+      <Drawer.Screen
+        name="index"
+        options={{
+          title: t("myTasks.headerTitle"),
+          drawerIcon: ({ color, size }) => (
+            <FontAwesome6 name="list-check" size={size} color={color} />
+          ),
+        }}
+      />
+    </Drawer>
+  );
+}
+
+const styles = StyleSheet.create({
+  drawerItemStyle: {
+    borderRadius: 8,
+  },
+  drawerLabelStyle: {
+    fontFamily: Fonts.family.medium,
+  },
+  drawerStyle: {
+    width: "75%",
+  },
+  headerStyle: {
+    backgroundColor: Colors.dark,
+    elevation: 0,
+  },
+  headerTitleStyle: {
+    fontFamily: Fonts.family.bold,
+  },
+});

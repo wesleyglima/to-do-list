@@ -1,50 +1,78 @@
-# Welcome to your Expo app 👋
+# 🚀 Sobre o Projeto
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+Este projeto foi desenvolvido utilizando o **[Node.js na versão 24.15.0](https://nodejs.org/pt-br/blog/release/v24.15.0)**.
 
-## Get started
+## 📋 To Do List App
 
-1. Install dependencies
+Aplicativo de lista de tarefas desenvolvido com foco em organização pessoal, autenticação de usuários e sincronização utilizando Firebase.
 
-   ```bash
-   npm install
-   ```
+Cada usuário possui sua própria lista de tarefas, garantindo privacidade e independência de dados.
 
-2. Start the app
+## Tecnologias utilizadas
 
-   ```bash
-   npx expo start
-   ```
+- React Native
+- Expo
+- Firebase
+- i18next
+- Zustand
 
-In the output, you'll find options to open the app in a
+## 🌍 Aplicativo com suporte a tradução (PT, EN e ES)
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+O app reconhece automaticamente o idioma do dispositivo, com suporte para:
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Português
+- Inglês
+- Espanhol
 
-## Get a fresh project
+## 🔐 Acesso
 
-When you're ready, run:
+Para utilizar o aplicativo, é necessário estar autenticado.
 
-```bash
-npm run reset-project
+```
+E-mail: wesleyguedes7@gmail.com
+Senha: 123456
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+Você pode criar uma conta ou utilizar o acesso de teste:
 
-## Learn more
+## Como executar o projeto
 
-To learn more about developing your project with Expo, look at the following resources:
+Pré-requisitos: npm/ yarn
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+Clonar repositório:
 
-## Join the community
+```Bash
+git clone https://github.com/wesleyglima/to-do-list.git
+```
 
-Join our community of developers creating universal apps.
+Entrar na pasta do projeto:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+```bash
+cd to-do-list
+```
+
+Instalar dependências:
+
+```bash
+npm install
+```
+
+ou
+
+```bash
+yarn install
+```
+
+Executar o projeto:
+
+```bash
+npx expo start -c
+```
+
+## ▶️ Rodando o app
+
+Após executar o comando acima, você pode:
+
+- Escanear o QR Code com o seu dispositivo físico (usando o app Expo Go)
+- Pressionar a para abrir no emulador Android (Android Studio)
+- Pressionar i para abrir no simulador iOS
