@@ -177,7 +177,7 @@ export default function Index() {
     setUpdatingTask(task);
   }
 
-  async function completeTask(id: string) {
+  async function toggleTaskCompleted(id: string) {
     const updatingTask = tasks.find((task) => task.id === id);
 
     if (updatingTask) {
@@ -290,7 +290,7 @@ export default function Index() {
             renderItem={({ item }) => (
               <TaskCard
                 {...item}
-                onCompleteTask={completeTask}
+                onToggleTaskCompleted={toggleTaskCompleted}
                 onUpdateTask={handleUpdateTask}
                 onDeleteTask={handleDeleteTask}
               />

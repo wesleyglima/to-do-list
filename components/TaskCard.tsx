@@ -6,7 +6,7 @@ import { StyleSheet, TouchableOpacity, View } from "react-native";
 import BouncyCheckbox from "react-native-bouncy-checkbox";
 
 type TaskCardProps = Task & {
-  onCompleteTask: (id: string) => Promise<void>;
+  onToggleTaskCompleted: (id: string) => Promise<void>;
   onUpdateTask: (id: string) => void;
   onDeleteTask: (id: string) => void;
 };
@@ -15,7 +15,7 @@ export default function TaskCard({
   id,
   description,
   completed,
-  onCompleteTask,
+  onToggleTaskCompleted,
   onUpdateTask,
   onDeleteTask,
 }: TaskCardProps) {
@@ -23,7 +23,7 @@ export default function TaskCard({
     <View style={styles.container}>
       <View style={styles.info}>
         <BouncyCheckbox
-          onPress={async () => onCompleteTask(id)}
+          onPress={async () => onToggleTaskCompleted(id)}
           bounceEffectIn={1.2}
           fillColor={Colors.primary}
           innerIconStyle={styles.innerIconStyle}
