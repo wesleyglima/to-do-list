@@ -395,7 +395,7 @@ const styles = StyleSheet.create({
     padding: 24,
   },
   list: {
-    gap: 8,
+    gap: 24,
     paddingVertical: 32,
     paddingHorizontal: 24,
   },

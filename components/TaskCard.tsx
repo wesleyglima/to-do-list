@@ -25,20 +25,13 @@ export default function TaskCard({
         <BouncyCheckbox
           onPress={async () => onToggleTaskCompleted(id)}
           bounceEffectIn={1.2}
-          fillColor={Colors.primary}
+          fillColor={completed ? Colors.success : Colors.gray}
           innerIconStyle={styles.innerIconStyle}
           isChecked={completed}
-          size={24}
+          size={20}
           text={description}
-          textStyle={[
-            styles.description,
-            {
-              fontFamily: completed
-                ? Fonts.family.medium_italic
-                : Fonts.family.medium,
-            },
-          ]}
-          unFillColor={Colors.dark_light}
+          textStyle={styles.description}
+          unFillColor="transparent"
         />
       </View>
       <TouchableOpacity
@@ -72,11 +65,12 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   innerIconStyle: {
-    borderWidth: 2,
+    borderWidth: 1,
   },
   description: {
     color: Colors.light,
     flex: 1,
+    fontFamily: Fonts.family.medium,
     fontSize: Fonts.size.normal,
   },
   actionButton: {

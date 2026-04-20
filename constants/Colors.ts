@@ -5,4 +5,5 @@ export default {
   gray: "#7C7C7C",
   light: "#FEFEFE",
   primary: "#4E78F1",
+  success: "#0FB746",
 };

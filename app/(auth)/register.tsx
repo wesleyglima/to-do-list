@@ -194,7 +194,7 @@ const styles = StyleSheet.create({
     width: "80%",
   },
   form: {
-    gap: 12,
+    gap: 24,
     paddingHorizontal: 24,
   },
   text: {

@@ -72,4 +72,3 @@ const pt = {
 };
 
 export default pt;
-export type Translations = typeof pt;
