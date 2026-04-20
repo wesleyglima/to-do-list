@@ -36,6 +36,7 @@ const en = {
       deleteTaskAlertTitle: "Delete task",
       deleteTaskErrorMessage: "Unable to delete the task. Please try again.",
       emptyText: `You don't have any tasks yet.\nTap + to get started.`,
+      emptySearchResults: "No results found.",
       getTasksErrorMessage:
         "Unable to load your tasks. Check your connection and try again.",
       headerTitle: "My Tasks",

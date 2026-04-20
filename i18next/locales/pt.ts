@@ -39,6 +39,7 @@ const pt = {
       deleteTaskErrorMessage:
         "Não foi possível deletar a tarefa. Tente novamente.",
       emptyText: `Você ainda não tem tarefas.\nToque no + para começar.`,
+      emptySearchResults: "Sua pesquisa não retornou resultados.",
       getTasksErrorMessage:
         "Não foi possível carregar suas tarefas. Verifique sua conexão e tente novamente.",
       headerTitle: "Minhas Tarefas",

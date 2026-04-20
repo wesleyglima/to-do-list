@@ -58,7 +58,7 @@ export default function Index() {
   function renderListEmptyComponent() {
     return (
       <Text style={[styles.emptyText, { fontSize: Fonts.size.normal }]}>
-        Sua pesquisa não retornou resultados.
+        {t("myTasks.emptySearchResults")}
       </Text>
     );
   }
