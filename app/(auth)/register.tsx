@@ -14,6 +14,7 @@ import {
   Alert,
   Image,
   KeyboardAvoidingView,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -94,89 +95,94 @@ export default function Register() {
 
   return (
     <View style={styles.container}>
-      <KeyboardAvoidingView behavior="position">
-        <Image
-          style={styles.image}
-          source={require("@/assets/images/to-do-list.png")}
-        />
-        <View style={styles.form}>
-          <Controller
-            name="email"
-            control={control}
-            render={({ field: { onChange, value } }) => (
-              <View>
-                <Input
-                  autoCapitalize="none"
-                  editable={!isRegistering}
-                  error={errors?.email?.message}
-                  keyboardType="email-address"
-                  onChangeText={onChange}
-                  onSubmitEditing={() => passwordInputRef?.current?.focus()}
-                  placeholder={t("register.emailInputPlaceholder")}
-                  value={value}
-                />
-              </View>
-            )}
+      <ScrollView
+        contentContainerStyle={styles.scroll}
+        keyboardShouldPersistTaps="always"
+      >
+        <KeyboardAvoidingView behavior="position">
+          <Image
+            style={styles.image}
+            source={require("@/assets/images/to-do-list.png")}
           />
-          <Controller
-            name="password"
-            control={control}
-            render={({ field: { onChange, value } }) => (
-              <View>
-                <Input
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  editable={!isRegistering}
-                  error={errors?.password?.message}
-                  onChangeText={onChange}
-                  onSubmitEditing={() =>
-                    passwordConfirmationInputRef?.current?.focus()
-                  }
-                  placeholder={t("register.passwordInputPlaceholder")}
-                  ref={passwordInputRef}
-                  secureTextEntry
-                  value={value}
-                />
-              </View>
-            )}
-          />
-          <Controller
-            name="passwordConfirmation"
-            control={control}
-            render={({ field: { onChange, value } }) => (
-              <View>
-                <Input
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  editable={!isRegistering}
-                  error={errors?.passwordConfirmation?.message}
-                  onChangeText={onChange}
-                  onSubmitEditing={handleSubmit(handleRegister)}
-                  placeholder={t(
-                    "register.confirmationPasswordInputPlaceholder",
-                  )}
-                  ref={passwordConfirmationInputRef}
-                  secureTextEntry
-                  value={value}
-                />
-              </View>
-            )}
-          />
-          <Button
-            title={t("register.cta")}
-            onPress={handleSubmit(handleRegister)}
-            disabled={isRegistering}
-          />
-          <Link href="/(auth)" asChild>
-            <Text style={styles.text}>
-              {t("register.firstLinkText")}{" "}
-              <Text style={{ fontFamily: Fonts.family.bold }}>
-                {t("register.secondLinkText")}
+          <View style={styles.form}>
+            <Controller
+              name="email"
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <View>
+                  <Input
+                    autoCapitalize="none"
+                    editable={!isRegistering}
+                    error={errors?.email?.message}
+                    keyboardType="email-address"
+                    onChangeText={onChange}
+                    onSubmitEditing={() => passwordInputRef?.current?.focus()}
+                    placeholder={t("register.emailInputPlaceholder")}
+                    value={value}
+                  />
+                </View>
+              )}
+            />
+            <Controller
+              name="password"
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <View>
+                  <Input
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    editable={!isRegistering}
+                    error={errors?.password?.message}
+                    onChangeText={onChange}
+                    onSubmitEditing={() =>
+                      passwordConfirmationInputRef?.current?.focus()
+                    }
+                    placeholder={t("register.passwordInputPlaceholder")}
+                    ref={passwordInputRef}
+                    secureTextEntry
+                    value={value}
+                  />
+                </View>
+              )}
+            />
+            <Controller
+              name="passwordConfirmation"
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <View>
+                  <Input
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    editable={!isRegistering}
+                    error={errors?.passwordConfirmation?.message}
+                    onChangeText={onChange}
+                    onSubmitEditing={handleSubmit(handleRegister)}
+                    placeholder={t(
+                      "register.confirmationPasswordInputPlaceholder",
+                    )}
+                    ref={passwordConfirmationInputRef}
+                    secureTextEntry
+                    value={value}
+                  />
+                </View>
+              )}
+            />
+            <Button
+              title={t("register.cta")}
+              onPress={handleSubmit(handleRegister)}
+              disabled={isRegistering}
+            />
+            <Link href="/(auth)" asChild>
+              <Text style={styles.text}>
+                {t("register.firstLinkText")}{" "}
+                <Text style={{ fontFamily: Fonts.family.bold }}>
+                  {t("register.secondLinkText")}
+                </Text>
               </Text>
-            </Text>
-          </Link>
-        </View>
-      </KeyboardAvoidingView>
+            </Link>
+          </View>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </View>
   );
 }
@@ -186,11 +192,15 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.dark,
     flex: 1,
   },
+  scroll: {
+    minHeight: "100%",
+    paddingBottom: 32,
+  },
   image: {
     alignSelf: "center",
     aspectRatio: 1,
     height: undefined,
-    marginTop: 24,
+    marginTop: 32,
     width: "80%",
   },
   form: {

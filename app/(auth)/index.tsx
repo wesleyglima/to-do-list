@@ -14,6 +14,7 @@ import {
   Alert,
   Image,
   KeyboardAvoidingView,
+  ScrollView,
   StyleSheet,
   Text,
   TextInput,
@@ -84,65 +85,70 @@ export default function Index() {
 
   return (
     <View style={styles.container}>
-      <KeyboardAvoidingView behavior="position">
-        <Image
-          style={styles.image}
-          source={require("@/assets/images/to-do-list.png")}
-        />
-        <View style={styles.form}>
-          <Controller
-            name="email"
-            control={control}
-            render={({ field: { onChange, value } }) => (
-              <View>
-                <Input
-                  autoCapitalize="none"
-                  editable={!isLogginIn}
-                  error={errors?.email?.message}
-                  keyboardType="email-address"
-                  onChangeText={onChange}
-                  onSubmitEditing={() => passwordInputRef?.current?.focus()}
-                  placeholder={t("login.emailInputPlaceholder")}
-                  value={value}
-                />
-              </View>
-            )}
+      <ScrollView
+        contentContainerStyle={styles.scroll}
+        keyboardShouldPersistTaps="always"
+      >
+        <KeyboardAvoidingView behavior="position">
+          <Image
+            style={styles.image}
+            source={require("@/assets/images/to-do-list.png")}
           />
-          <Controller
-            name="password"
-            control={control}
-            render={({ field: { onChange, value } }) => (
-              <View>
-                <Input
-                  autoCapitalize="none"
-                  autoCorrect={false}
-                  editable={!isLogginIn}
-                  error={errors?.password?.message}
-                  onChangeText={onChange}
-                  onSubmitEditing={handleSubmit(handleLogin)}
-                  placeholder={t("login.passwordInputPlaceholder")}
-                  ref={passwordInputRef}
-                  secureTextEntry
-                  value={value}
-                />
-              </View>
-            )}
-          />
-          <Button
-            title={t("login.cta")}
-            onPress={handleSubmit(handleLogin)}
-            disabled={isLogginIn}
-          />
-          <Link href="/(auth)/register" asChild>
-            <Text style={styles.text}>
-              {t("login.firstLinkText")}{" "}
-              <Text style={{ fontFamily: Fonts.family.bold }}>
-                {t("login.secondLinkText")}
+          <View style={styles.form}>
+            <Controller
+              name="email"
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <View>
+                  <Input
+                    autoCapitalize="none"
+                    editable={!isLogginIn}
+                    error={errors?.email?.message}
+                    keyboardType="email-address"
+                    onChangeText={onChange}
+                    onSubmitEditing={() => passwordInputRef?.current?.focus()}
+                    placeholder={t("login.emailInputPlaceholder")}
+                    value={value}
+                  />
+                </View>
+              )}
+            />
+            <Controller
+              name="password"
+              control={control}
+              render={({ field: { onChange, value } }) => (
+                <View>
+                  <Input
+                    autoCapitalize="none"
+                    autoCorrect={false}
+                    editable={!isLogginIn}
+                    error={errors?.password?.message}
+                    onChangeText={onChange}
+                    onSubmitEditing={handleSubmit(handleLogin)}
+                    placeholder={t("login.passwordInputPlaceholder")}
+                    ref={passwordInputRef}
+                    secureTextEntry
+                    value={value}
+                  />
+                </View>
+              )}
+            />
+            <Button
+              title={t("login.cta")}
+              onPress={handleSubmit(handleLogin)}
+              disabled={isLogginIn}
+            />
+            <Link href="/(auth)/register" asChild>
+              <Text style={styles.text}>
+                {t("login.firstLinkText")}{" "}
+                <Text style={{ fontFamily: Fonts.family.bold }}>
+                  {t("login.secondLinkText")}
+                </Text>
               </Text>
-            </Text>
-          </Link>
-        </View>
-      </KeyboardAvoidingView>
+            </Link>
+          </View>
+        </KeyboardAvoidingView>
+      </ScrollView>
     </View>
   );
 }
@@ -152,11 +158,15 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.dark,
     flex: 1,
   },
+  scroll: {
+    minHeight: "100%",
+    paddingBottom: 32,
+  },
   image: {
     alignSelf: "center",
     aspectRatio: 1,
     height: undefined,
-    marginTop: 24,
+    marginTop: 32,
     width: "80%",
   },
   form: {
