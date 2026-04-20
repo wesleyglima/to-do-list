@@ -295,7 +295,7 @@ export default function Index() {
                 onDeleteTask={handleDeleteTask}
               />
             )}
-            onRefresh={getTasks}
+            onRefresh={async () => await getTasks()}
             refreshControl={
               <RefreshControl
                 colors={[Colors.light]}
@@ -328,7 +328,7 @@ export default function Index() {
         <TouchableOpacity
           style={styles.modal}
           activeOpacity={1}
-          onPress={() => setShowModal(false)}
+          onPress={closeModal}
         >
           <View style={styles.modalContent}>
             <Input
@@ -352,23 +352,24 @@ export default function Index() {
                   />
                 </View>
               )}
-              {modalInputField.trim() && (
-                <View style={styles.buttonWrapper}>
-                  <Button
-                    title={
-                      !updatingTask
-                        ? t("myTasks.modalAddCta")
-                        : t("myTasks.modalUpdateCta")
-                    }
-                    onPress={
-                      !updatingTask
-                        ? async () => addTask()
-                        : async () => updateTask()
-                    }
-                    disabled={isProcessing}
-                  />
-                </View>
-              )}
+              {modalInputField.trim() &&
+                modalInputField.trim() !== updatingTask?.description && (
+                  <View style={styles.buttonWrapper}>
+                    <Button
+                      title={
+                        !updatingTask
+                          ? t("myTasks.modalAddCta")
+                          : t("myTasks.modalUpdateCta")
+                      }
+                      onPress={
+                        !updatingTask
+                          ? async () => addTask()
+                          : async () => updateTask()
+                      }
+                      disabled={isProcessing}
+                    />
+                  </View>
+                )}
             </View>
           </View>
         </TouchableOpacity>

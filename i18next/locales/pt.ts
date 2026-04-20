@@ -34,7 +34,7 @@ const pt = {
         "Não foi possível completar a tarefa. Tente novamente.",
       deleteTaskAlertCancelCta: "Cancelar",
       deleteTaskAlertConfirmCta: "Excluir",
-      deleteTaskAlertMessage: "Tem certeza que deseja excluir?",
+      deleteTaskAlertMessage: "Tem certeza que deseja excluir",
       deleteTaskAlertTitle: "Excluir tarefa",
       deleteTaskErrorMessage:
         "Não foi possível deletar a tarefa. Tente novamente.",

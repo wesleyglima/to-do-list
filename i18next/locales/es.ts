@@ -34,7 +34,7 @@ const es = {
         "No se pudo completar la tarea. Inténtalo de nuevo.",
       deleteTaskAlertCancelCta: "Cancelar",
       deleteTaskAlertConfirmCta: "Eliminar",
-      deleteTaskAlertMessage: "¿Estás seguro de que deseas eliminar?",
+      deleteTaskAlertMessage: "¿Estás seguro de que deseas eliminar",
       deleteTaskAlertTitle: "Eliminar tarea",
       deleteTaskErrorMessage:
         "No se pudo eliminar la tarea. Inténtalo de nuevo.",

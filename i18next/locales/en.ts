@@ -32,7 +32,7 @@ const en = {
         "Unable to complete the task. Please try again.",
       deleteTaskAlertCancelCta: "Cancel",
       deleteTaskAlertConfirmCta: "Delete",
-      deleteTaskAlertMessage: "Are you sure you want to delete?",
+      deleteTaskAlertMessage: "Are you sure you want to delete",
       deleteTaskAlertTitle: "Delete task",
       deleteTaskErrorMessage: "Unable to delete the task. Please try again.",
       emptyText: `You don't have any tasks yet.\nTap + to get started.`,
