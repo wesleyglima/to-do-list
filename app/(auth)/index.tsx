@@ -67,7 +67,7 @@ export default function Index() {
 
       setUser(user);
 
-      router.replace("/(dashboard)");
+      router.replace("/(app)");
     } catch (error) {
       console.log(error);
 

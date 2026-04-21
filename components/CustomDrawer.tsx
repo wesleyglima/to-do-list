@@ -25,7 +25,7 @@ export function CustomDrawer(props: DrawerContentComponentProps) {
     try {
       await signOut(auth);
 
-      setUser(user);
+      setUser(null);
 
       router.replace("/(auth)");
     } catch (error) {

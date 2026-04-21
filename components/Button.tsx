@@ -46,6 +46,7 @@ export default function Button({
               color: variant === "outline" ? Colors.primary : Colors.light,
             },
           ]}
+          numberOfLines={1}
         >
           {title}
         </Text>

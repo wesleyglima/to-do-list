@@ -333,6 +333,7 @@ export default function Index() {
           <View style={styles.modalContent}>
             <Input
               editable={!isProcessing}
+              maxLength={100}
               onChangeText={setModalInputField}
               onSubmitEditing={
                 !updatingTask ? async () => addTask() : async () => updateTask()

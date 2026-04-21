@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function DashboardLayout() {
+export default function AppLayout() {
   const { t } = useTranslation();
 
   return (
@@ -42,7 +42,7 @@ export default function DashboardLayout() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.dark,
     flex: 1,
   },
   drawerItemStyle: {

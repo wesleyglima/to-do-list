@@ -3,7 +3,7 @@ import { Stack } from "expo-router";
 import { StyleSheet } from "react-native";
 import { SafeAreaView } from "react-native-safe-area-context";
 
-export default function DashboardLayout() {
+export default function AuthLayout() {
   return (
     <SafeAreaView style={styles.container}>
       <Stack screenOptions={{ headerShown: false }}>
@@ -16,7 +16,7 @@ export default function DashboardLayout() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.dark,
     flex: 1,
   },
 });

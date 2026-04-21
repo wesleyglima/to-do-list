@@ -15,7 +15,7 @@ export default function Index() {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       if (user) {
         setUser(user);
-        router.replace("/(dashboard)");
+        router.replace("/(app)");
       } else router.replace("/(auth)");
     });
 
